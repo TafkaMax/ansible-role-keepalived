@@ -8,4 +8,4 @@ _keepalived_packages:
     - keepalived
     - keepalived-sample-config
 
-keepalived_packages: "{{ _keepalived_packages[ansible_os_family] | default(_keepalived_packages['default']) }}"
+keepalived_packages: "{{ _keepalived_packages[ansible_facts['os_family']] | default(_keepalived_packages['default']) }}"
