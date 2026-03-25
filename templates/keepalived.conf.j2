@@ -42,7 +42,7 @@ vrrp_instance {{ instance.name }} {
   }
   virtual_ipaddress {
   {% for ip in instance.virtual_ipaddresses %}
-  {{ ip.name }}/{{ ip.cidr }}
+    {{ ip.name }}/{{ ip.cidr }}
   {% endfor %}
   }
 {% if instance.check_status_command is defined %}
