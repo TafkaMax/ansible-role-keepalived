@@ -1,5 +1,13 @@
 {{ ansible_managed | comment }}
 
+{% if keepalived_global_defs %}
+global_defs {
+{% for opt_name, opt_value in keepalived_global_defs.values() %}
+  {{ opt_name }} {{ opt_value }}
+{% endfor %}
+}
+{% endif %}
+
 {% for instance in keepalived_vrrp_instances %}
 {% if instance.check_status_command is defined %}
 
