@@ -46,3 +46,12 @@
 #       - name: "192.168.122.200"
 #         cidr: 24
 keepalived_vrrp_instances: []
+
+# keepalived_global_defs:
+# Configure optional key-value pairs here. for global definitions. E.g. required for adding scripts usage in newer keepalived versions.
+# Meant to be generic as possible. Can also accept keys without values.
+# Example:
+# keepalived_globals_defs:
+#  enable_script_security: ~  # <- This will not add an value after the key. E.g. the yaml null variable ~ is used
+#  script_user: root
+keepalived_global_defs: {}
