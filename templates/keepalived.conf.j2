@@ -19,7 +19,7 @@ vrrp_script chk_command_{{ instance.virtual_router_id }} {
    {% for opt_name, opt_value in instance.check_status_opts.values() | default(omit) %}
    {{ opt_name }} {{ opt_value }}
    {% endfor %}
-   {% endif -%}
+   {% endif %}
 }
 
 {% endif %}
