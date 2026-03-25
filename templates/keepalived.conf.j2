@@ -43,12 +43,12 @@ vrrp_instance {{ instance.name }} {
   virtual_ipaddress {
   {% for ip in instance.virtual_ipaddresses %}
   {{ ip.name }}/{{ ip.cidr }}
-{% endfor %}
+  {% endfor %}
   }
 {% if instance.check_status_command is defined %}
   track_script {
     chk_command_{{ instance.virtual_router_id }}
-}
+  }
 {% endif %}
 }
 {% endfor %}
