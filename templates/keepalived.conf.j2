@@ -19,7 +19,7 @@ vrrp_script chk_command_{{ instance.virtual_router_id }} {
    interval {{ instance.check_status_interval | default(2) }}          # (default) check every 2 seconds
    weight {{ instance.check_status_weight | default(3) }}              # (default) add 3 points of prio if OK
    {% if instance.check_status_opts is defined and instance.check_status_opts %}
-   {% for opt_name, opt_value in instance.check_status_opts.items() | default(omit) %}
+   {% for opt_name, opt_value in instance.check_status_opts.items() %}
    {{ opt_name }} {{ opt_value }}
    {% endfor %}
    {% endif %}
